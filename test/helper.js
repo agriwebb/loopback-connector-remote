@@ -11,6 +11,7 @@ var remoteConnector = require('..');
 exports.createMemoryDataSource = createMemoryDataSource;
 exports.createModel = createModel;
 exports.createRemoteDataSource = createRemoteDataSource;
+exports.createRemoteDataSourceWithOptions = createRemoteDataSourceWithOptions;
 exports.createRestAppAndListen = createRestAppAndListen;
 exports.getUserProperties = getUserProperties;
 
@@ -40,6 +41,14 @@ function createRemoteDataSource(remoteApp) {
   return loopback.createDataSource({
     url: 'http://' + remoteApp.get('host') + ':' + remoteApp.get('port'),
     connector: remoteConnector
+  });
+}
+
+function createRemoteDataSourceWithOptions(remoteApp, options) {
+  return loopback.createDataSource({
+    url: 'http://anyURL.com',
+    connector: remoteConnector,
+    options: options
   });
 }
 

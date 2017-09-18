@@ -133,3 +133,25 @@ describe('Custom Path', function() {
     });
   });
 });
+
+describe('options on remote datasource', function() {
+  var ctx = this;
+  var datasource;
+
+  before(function setupServer(done) {
+    ctx.serverApp = helper.createRestAppAndListen();
+    datasource = helper.createRemoteDataSourceWithOptions(ctx.serverApp, {'test': 'abc'});
+    done();
+  });
+
+  it('should have the options passed to the remote object', function(done) {
+    assert(datasource.connector.remotes.options.test === 'abc');
+    done();
+  });
+
+  after(function(done)
+  {
+    ctx.serverApp.locals.handler.close();
+    done();
+  });
+});
