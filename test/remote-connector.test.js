@@ -134,7 +134,7 @@ describe('Custom Path', function() {
   });
 });
 
-describe('options on remote datasource', function() {
+describe('remoting options on remote datasource', function() {
   var ctx = this;
   var datasource;
 
@@ -144,7 +144,7 @@ describe('options on remote datasource', function() {
     done();
   });
 
-  it('should have the options passed to the remote object', function(done) {
+  it('should have the remoting options passed to the remote object', function(done) {
     assert(datasource.connector.remotes.options.test === 'abc');
     done();
   });
