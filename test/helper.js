@@ -48,7 +48,7 @@ function createRemoteDataSourceWithOptions(remoteApp, options) {
   return loopback.createDataSource({
     url: 'http://anyURL.com',
     connector: remoteConnector,
-    remoting: options
+    options: options
   });
 }
 
