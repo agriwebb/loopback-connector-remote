@@ -30,7 +30,7 @@
   "homepage": "http://loopback.io",
   "dependencies": {
     "loopback-datasource-juggler": "^2.8.0",
-    "strong-remoting": "^2.3.0"
+    "strong-remoting": "git+https://github.com/agriwebb/strong-remoting.git#agriwebb-merge"
   },
   "devDependencies": {
     "assert": "^1.1.2",
